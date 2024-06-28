@@ -1,5 +1,7 @@
+import { envs } from "./config";
 import { AppRoutes } from "./presentation/routes";
 import { Server } from "./presentation/server";
+import "reflect-metadata"
 
 (async()=>{
     main();
@@ -9,7 +11,7 @@ import { Server } from "./presentation/server";
 async function main() {
 
    const server =  new Server({
-        port : 3000,
+        port : envs.PORT,
         routes :  AppRoutes.routes
    });
 
